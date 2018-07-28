@@ -13,10 +13,16 @@ const convertNumToWord = () => {
 	let Num = txtNum.value.split('.')[0];
 	let temp = "";
 	let pesos = "Pesos";
+	let numPlace = "";
 
 	while(Num != 0) {
 		temp = getHundred(Num.slice(-3));
-		result = `${temp} ${bigNumber[places]} ${result}`;
+		numPlace = bigNumber[places];
+
+		if(temp === "")
+			numPlace = "";
+
+		result = `${temp} ${numPlace} ${result}`;
 
 		if(Num.length > 3)
 			Num = Num.substring(0,(Num.length - 3));
