@@ -36,7 +36,13 @@ const convertNumToWord = () => {
 		pesos = 'peso';
 	}
 
-	txtWord.textContent = `${result} ${pesos} ${cent}`;
+
+	if(result === "" || result == 0)
+		result = "Zero";
+	else
+		result = `${result} ${pesos} ${cent}`;
+
+	txtWord.textContent = result;
 }
 
 const getCents = (Num) => {
